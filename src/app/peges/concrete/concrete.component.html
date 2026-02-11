@@ -1,0 +1,67 @@
+<section class="w-full min-h-screen bg-[#F5E7D0] py-20">
+  <div class="container mx-auto px-6">
+
+    <!-- العنوان -->
+    <h1 class="text-4xl font-bold mb-10">منتجات الكونكريت</h1>
+
+    <!-- المنتجات -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+
+    @for(item of products; track $index) {
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition transform cursor-pointer" (click)="openModal($index)" >
+        <img src="{{item.image}}"  class="w-full h-48 object-cover">
+        
+        
+        
+         
+        
+      </div>
+    }
+
+    </div>
+    @if(isOpen) {
+         <div 
+         class="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
+
+      <div class="relative max-w-4xl w-full mx-4">
+
+        <!-- X Close -->
+        <button (click)="closeModal()"
+                class="absolute top-4 right-4 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-white/30 text-white text-2xl hover:bg-white/50 transition">
+          &times;
+        </button>
+
+        <!-- Prev -->
+        <button (click)="prev()"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-white/30 text-white text-2xl hover:bg-white/50 transition">
+         
+            &#10095;
+        </button>
+
+        <!-- Next -->
+        <button (click)="next()"
+                 class="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-white/30 text-white text-2xl hover:bg-white/50 transition">
+         &#10094;
+        </button>
+
+        <!-- الصورة -->
+        <img [src]="products[currentIndex].image"
+             class="w-full max-h-[80vh] object-contain rounded-lg shadow-lg mx-auto">
+
+      </div>
+    </div>
+
+  
+    }
+
+
+    <div class="my-4 flex justify-between items-center">
+        <button (click)="goBack()"
+        class="bg-orange-500 text-white px-10 py-3 rounded-lg hover:bg-orange-600 transition"> رجواع للمنتجات</button>
+        <button (click)="gocontact()"
+        class="bg-orange-500 text-white px-10 py-3 rounded-lg hover:bg-orange-600 transition">تواصل معنا </button>
+    </div>
+  </div>
+</section>
+

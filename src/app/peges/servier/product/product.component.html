@@ -1,0 +1,26 @@
+<section class="w-full min-h-screen bg-[#F5E7D0] flex items-center">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center ">
+
+
+
+@for (item of categories; track $index) {
+
+          <div  (click)="item.action()" class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform cursor-pointer">
+    
+
+  <img src="{{item.image}}" class="w-full h-64 md:h-72 lg:h-80 object-cover">
+
+  <div class="p-6 flex flex-col items-center">
+    <h3 class="text-3xl font-semibold">{{item.title}}</h3>
+
+  </div>
+</div>
+
+}
+<button (click)="goBack()"
+        class="bg-orange-500 text-white px-1 py-3 rounded-lg hover:bg-orange-600 transition"> go Back</button>
+
+  </div>
+  
+ 
+</section>
