@@ -4,6 +4,7 @@ import { ProductComponent } from './peges/servier/product/product.component';
 import { ConcreteComponent } from './peges/concrete/concrete.component';
 import { ContactComponent } from './peges/contact/contact.component';
 import { NapkinsComponent } from './peges/napkins/napkins.component';
+import { ChildrenComponent } from './peges/children/children.component';
 
 export const routes: Routes = [
  { path: '', component: HeroComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
  {path:'concrete',component:ConcreteComponent},
  {path:'contact',component:ContactComponent},
  {path:'napkins',component:NapkinsComponent},
+ {path:'children',component:ChildrenComponent},
 ];
